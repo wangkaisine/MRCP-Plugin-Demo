@@ -571,7 +571,7 @@ static apt_bool_t xfyun_recog_stream_recog(xfyun_recog_channel_t *recog_channel,
 				recog_channel->last_result = apr_pstrdup(recog_channel->channel->pool,rslt);
 			} else {
 				// recog_channel->last_result = apr_psprintf(recog_channel->channel->pool,"%s%s",recog_channel->last_result,rslt);
-				recog_channel->last_result = apr_pstrcat(recog_channel->channel->pool, recog_channel->last_result,rslt);
+				recog_channel->last_result = apr_pstrcat(recog_channel->channel->pool, recog_channel->last_result, rslt, NULL);
 			}
 		}
 		apt_log(RECOG_LOG_MARK,APT_PRIO_INFO,"[xfyun] Get recog result:%s",rslt);
